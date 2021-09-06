@@ -17,3 +17,13 @@ Book.prototype.newfonc = function () {
 
 document.getElementById("book").innerHTML = hobit.newfonc();
 console.log(hobit.info())
+
+let myLibrary = [];
+
+function Book() {
+  // the constructor...
+}
+
+function addBookToLibrary() {
+  // do stuff here
+}
