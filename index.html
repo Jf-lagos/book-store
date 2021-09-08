@@ -9,12 +9,25 @@
     <div>
         <h1 id="book"></h1>
         <form>
-            <input type="text" name="name" value="" placeholder="Name" /><br />
-            <input type="text" name="input2" value="" placeholder="Input 2" /><br />
-            <input type="text" name="input3" value="" placeholder="Input 3" /><br />
-            <input type="text" name="input4" value="" placeholder="Input 4" /><br />
-            <button>Add</button>
-          </form>
+            <div class="formBox">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="Title"/>
+            </div>
+            <div class="formBox">
+                <label for="author">Author</label>
+                <input type="text" id="author" placeholder="Author"/>
+            </div>
+            <div class="formBox">
+                <label for="pages">Pages</label>
+                <input type="number" id="pages" placeholder="Pages"/>
+            </div>
+            <div class="formBox">
+                <button id="btn">Click to Add a book</button>
+            </div>
+            <div id="msg">
+                <pre></pre>
+            </div>
+        </form>
     </div>
 </body>
 <script src="script.js"></script>

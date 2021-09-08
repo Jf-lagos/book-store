@@ -1,45 +1,34 @@
-const book1 = new Book ("Hobit", "Moi meme", "640");
-const book2 = new Book ("Pere riche", "Kiyosaki", "69");
-const book3 = new Book ("Harry Potter", "Rollings", "1000");
 
-let myLibrary = [];
+        let myLibrary = [];
+        // example {id:1592304983049, title: 'Deadpool', year: 2015}
+        const addBookToLibrary = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            let book = {
+                title: document.getElementById('title').value,
+                year: document.getElementById('author').value,
+                pages: document.getElementById('pages').value,
+                
+            }
+            myLibrary.push(book);
 
-function Book (title, author, pages) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    }
+            // to clear the form for the next entries
+            document.querySelector('form').reset();
 
-function addBookToLibrary() {
-    boxvalue = document.getElementById('box').value;
-    myLibrary.push(boxvalue);
-    return false;
-  }
+            //for display purposes only
+            console.warn('added' , {myLibrary} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(myLibrary, '\t', 2);
 
-  document.querySelector('form button').addEventListener('click', function(event) {
-
-    var inputs = document.querySelectorAll('form input');
-    var newActivity = {};
-    for (var i = 0; i < inputs.length; i++) {
-      newActivity[inputs[i].name] = inputs[i].value;
-      inputs[i].value = '';
-    }
-    myActivities.push(newActivity);
-    console.log(myActivities);
-    event.preventDefault();
-  
-  }, false);
-
-console.log(myLibrary)
+            //saving to localStorage
+            localStorage.setItem('MyMovieList', JSON.stringify(myLibrary) );
+        }
+            document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', addBookToLibrary);
+        });
 
 
 
 
 
 
-
-Book.prototype.newfonc = function () {
-    return this.title + "hols"
-}
-
-
+//https://www.youtube.com/watch?v=NxVCq4p0Kb0
