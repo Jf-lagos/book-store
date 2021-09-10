@@ -6,7 +6,6 @@ function Book (title, author, pages){
     this.pages = pages 
 
 }
-const book1 = new Book ("moi", "toi", "20");
    
         let myLibrary = [];
         // example {id:1592304983049, title: 'Deadpool', year: 2015}
@@ -44,6 +43,12 @@ const book1 = new Book ("moi", "toi", "20");
             document.addEventListener('DOMContentLoaded', ()=>{
             document.getElementById('btn').addEventListener('click', addBookToLibrary);
         });
+
+        var theButton = document.getElementById('button');
+    
+    theButton.onclick = function() { 
+        document.getElementById('form').style.display='block';   
+    }
 
         
 
