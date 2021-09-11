@@ -24,18 +24,22 @@ function Book (title, author, pages){
 
             //for display purposes only
             console.log('added' , {myLibrary} );
-            let pre = document.querySelector('#msg pre');
-            pre.textContent = '\n' + JSON.stringify(myLibrary, '\t', 2);
+            /* let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(myLibrary, '\t', 2); */
             
             //loops through myLibrary array then display
             const livre = myLibrary.map(item => {
-               return `<div class="item">${item.title}</div>`
-               
+               return `<div class="item">${item.title}<button onclick="document.body.remove(this)">supp</button></div>`              
             });
-
             document.getElementById('display').innerHTML = livre;
 
+            //document.body.innerHTML = livre;
+
+   
+            //Faire en sorte de ne supprimer que la div en question et pas tout le body.
+            
             console.log(livre);
+
 
             //saving to localStorage
             localStorage.setItem('MyMovieList', JSON.stringify(myLibrary) );
@@ -44,16 +48,16 @@ function Book (title, author, pages){
             document.getElementById('btn').addEventListener('click', addBookToLibrary);
         });
 
+        //Show form
         var theButton = document.getElementById('button');
-    
-    theButton.onclick = function() { 
+        theButton.onclick = function() { 
         document.getElementById('form').style.display='block';   
-    }
+        }
 
         
 
        
-
+//`<div class="item">${item.title}<button onclick="document.body.remove(this)">supp</button></div>`
 
 
 
